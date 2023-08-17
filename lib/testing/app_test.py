@@ -29,4 +29,5 @@ class TestAppPy:
         sys.stdout = captured_out
         runpy.run_path("lib/app.py")
         sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == "Hello World! Pass this test, please.\n")
+        expected_output = "Hello World! Pass this test, please.\n"
+        assert captured_out.getvalue() == expected_output
